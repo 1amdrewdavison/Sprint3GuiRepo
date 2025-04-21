@@ -5,18 +5,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-
-public class ConstraintController {
+public class ModifyCourseController {
 	
 	ViewTransitionModel model;
 	
-	public ConstraintController() {
+	public ModifyCourseController() {
 		
 	}
 
-	public void setModel(ViewTransitionModel model) {
+	public void setModel(ViewTransitionModel viewTransitionModel) {
 		// TODO Auto-generated method stub
-		this.model = model;
+		this.model = viewTransitionModel;
 	}
 	
 	@FXML

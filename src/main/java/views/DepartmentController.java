@@ -1,6 +1,7 @@
 package views;
 
 import guiModels.SchedulerModel;
+import guiModels.ViewTransitionModel;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.control.TextArea;
 
 public class DepartmentController {
 	
-	SchedulerModel model;
+	ViewTransitionModel model;
 	
     private SimpleStringProperty statusTextProperty = new SimpleStringProperty("");
 	
@@ -24,21 +25,27 @@ public class DepartmentController {
 		
 	}
 
-	public void setModel(SchedulerModel model) {
+	public void setModel(ViewTransitionModel model) {
 		// TODO Auto-generated method stub
 		this.model = model;
 	      
+		statusBar.editableProperty().set(false);
 		Bindings.bindBidirectional(statusBar.textProperty(), statusTextProperty);
 	}
 	
 	@FXML
     void addCourse(ActionEvent event) {
-    	
+    	model.showInitializeCourse();
     }
 	
 	@FXML
     void addConstraint(ActionEvent event) {
-    	
+    	model.showConstraintModification();
+    }
+	
+	@FXML
+    void modifyCourse(ActionEvent event) {
+    	model.showCourseModification();
     }
 	
 	@FXML
@@ -51,7 +58,7 @@ public class DepartmentController {
     	setStatus("Department schedule marked as complete.");
     }
 
-	void setStatus(String status) {
+	public void setStatus(String status) {
 		statusTextProperty.set(status + "\n" + statusTextProperty.get());
 	}
 }

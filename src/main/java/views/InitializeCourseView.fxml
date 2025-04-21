@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CreateCourseController">
    <children>
       <Label alignment="BOTTOM_CENTER" prefHeight="86.0" prefWidth="500.0" text="Create New Course">
          <font>
-            <Font size="24.0" />
+            <Font size="48.0" />
          </font>
       </Label>
       <Label alignment="CENTER" prefHeight="27.0" prefWidth="510.0" text="Select Existing Course as Template">
@@ -21,59 +20,76 @@
             <Font size="18.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="20.0" top="25.0" />
+            <Insets bottom="10.0" top="25.0" />
          </VBox.margin>
       </Label>
       <HBox prefHeight="30.0" prefWidth="500.0">
          <children>
-            <Label prefHeight="27.0" prefWidth="154.0" text="Select Year">
+            <Label prefHeight="27.0" prefWidth="130.0" text="Select Year">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets left="100.0" />
+                  <Insets left="75.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox accessibleText="Year" prefWidth="150.0" />
+            <ChoiceBox accessibleText="Year" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin></ChoiceBox>
          </children>
       </HBox>
       <HBox prefHeight="30.0" prefWidth="500.0">
          <children>
-            <Label prefHeight="27.0" prefWidth="154.0" text="Select Season">
+            <Label prefHeight="27.0" prefWidth="130.0" text="Select Season">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets left="100.0" />
+                  <Insets left="75.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox accessibleText="Year" prefWidth="150.0" />
+            <ChoiceBox accessibleText="Year" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin></ChoiceBox>
          </children>
       </HBox>
       <HBox prefHeight="30.0" prefWidth="500.0">
          <children>
-            <Label prefHeight="27.0" prefWidth="154.0" text="Select Course">
+            <Label prefHeight="27.0" prefWidth="130.0" text="Select Course">
                <font>
                   <Font size="14.0" />
                </font>
                <HBox.margin>
-                  <Insets left="100.0" />
+                  <Insets left="75.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox accessibleText="Year" prefWidth="150.0" />
+            <ChoiceBox accessibleText="Year" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin></ChoiceBox>
          </children>
       </HBox>
-      <Label alignment="CENTER" prefHeight="75.0" prefWidth="500.0" text="OR">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Start From Scratch">
+      <Button fx:id="submitTemplateCourseButton" mnemonicParsing="false" onAction="#submitTemplateCourse" prefHeight="30.0" prefWidth="250.0" text="Submit">
          <font>
             <Font size="18.0" />
          </font>
          <VBox.margin>
-            <Insets bottom="25.0" left="150.0" right="150.0" />
+            <Insets left="125.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+      <Label alignment="CENTER" prefHeight="57.0" prefWidth="500.0" text="OR">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="submitNewCourseButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#submitNewCourse" prefHeight="29.0" prefWidth="250.0" text="Start From Scratch">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="125.0" />
          </VBox.margin>
       </Button>
    </children>

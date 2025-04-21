@@ -27,8 +27,6 @@ public class Main extends Application
     ViewTransitionModel vm = new ViewTransitionModel(view, model);
     cont.setModel(vm);
     vm.showDepartment();
-    //ViewTransitionalModel vm =new ViewTransitionalModel(view,model); 
-//    cont.setModel(vm);
 //    vm.showLogin();
     
     Scene s = new Scene(view);

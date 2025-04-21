@@ -29,7 +29,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ListView prefHeight="298.0" prefWidth="158.0" />
+                  <ListView fx:id="courseList" prefHeight="298.0" prefWidth="158.0" />
                </children>
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
@@ -39,14 +39,14 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <ListView prefHeight="183.0" prefWidth="167.0" />
+                  <ListView fx:id="constraintList" prefHeight="183.0" prefWidth="167.0" />
                </children>
             </VBox>
         </items>
       </SplitPane>
    </left>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="500.0" prefWidth="560.0" BorderPane.alignment="CENTER" />
    </center>
    <right>
       <VBox prefHeight="295.0" prefWidth="130.0" BorderPane.alignment="CENTER">

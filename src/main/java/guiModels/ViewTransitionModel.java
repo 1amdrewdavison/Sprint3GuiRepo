@@ -6,8 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import views.ConstraintController;
-import views.CourseController;
+import views.CreateCourseController;
 import views.DepartmentController;
+import views.ModifyCourseController;
 
 public class ViewTransitionModel {
 
@@ -29,7 +30,24 @@ public class ViewTransitionModel {
 	      mainview.setCenter(view);
 	      departmentView = view;
 	      DepartmentController cont = loader.getController();
-	      cont.setModel(model);
+	      cont.setModel(this);
+	    } catch (IOException e) {
+	      // TODO Auto-generated catch block
+	      e.printStackTrace();
+	    }
+	}
+	    
+    public void showDepartment(String departmentStatusUpdate) {
+		FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(ViewTransitionModel.class
+	        .getResource("../views/DepartmentView.fxml"));
+	    try {
+	      BorderPane view = loader.load();
+	      mainview.setCenter(view);
+	      departmentView = view;
+	      DepartmentController cont = loader.getController();
+	      cont.setModel(this);
+	      cont.setStatus(departmentStatusUpdate);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
@@ -43,8 +61,8 @@ public class ViewTransitionModel {
 	    try {
 	      Pane view = loader.load();
 	      departmentView.setCenter(view);
-	      CourseController cont = loader.getController();
-	      cont.setModel(model);
+	      ModifyCourseController cont = loader.getController();
+	      cont.setModel(this);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
@@ -59,7 +77,7 @@ public class ViewTransitionModel {
 	      Pane view = loader.load();
 	      departmentView.setCenter(view);
 	      ConstraintController cont = loader.getController();
-	      cont.setModel(model);
+	      cont.setModel(this);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
@@ -69,12 +87,12 @@ public class ViewTransitionModel {
 	public void showInitializeCourse() {
 		FXMLLoader loader = new FXMLLoader();
 	    loader.setLocation(ViewTransitionModel.class
-	        .getResource("../views/CourseModificationView.fxml"));
+	        .getResource("../views/InitializeCourseView.fxml"));
 	    try {
 	      Pane view = loader.load();
 	      departmentView.setCenter(view);
-	      CourseController cont = loader.getController();
-	      cont.setModel(model);
+	      CreateCourseController cont = loader.getController();
+	      cont.setModel(this);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
