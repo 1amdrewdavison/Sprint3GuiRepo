@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CatalogController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Catalog" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10">
+            <TreeView fx:id="catalogTreeView" VBox.vgrow="ALWAYS" prefHeight="500.0" />
+            
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="backButton" text="Back" onAction="#handleBackAction" prefWidth="100" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

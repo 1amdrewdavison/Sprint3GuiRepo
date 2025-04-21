@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CurrentTermController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Current Term: Spring 2025" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <TreeView fx:id="termTreeView" VBox.vgrow="ALWAYS" prefHeight="400.0" />
+    </center>
+    
+    <right>
+        <VBox fx:id="registrarToolsPane" spacing="15" visible="false" managed="false" prefWidth="200">
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+            <Label text="Registrar Tools" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Label>
+            <Button fx:id="validateButton" text="Validate Term" onAction="#handleValidateAction" prefWidth="160" />
+            <Button fx:id="finalizeButton" text="Finalize Term" onAction="#handleFinalizeAction" prefWidth="160" />
+        </VBox>
+    </right>
+    
+    <bottom>
+        <VBox spacing="5">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <Separator />
+            <Label text="Status / Errors" style="-fx-font-weight: bold;" />
+            <TextArea fx:id="statusTextArea" prefHeight="100.0" editable="false" wrapText="true" />
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Button fx:id="backButton" text="Back" onAction="#handleBackAction" prefWidth="100" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

@@ -10,55 +10,55 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 public class DepartmentController {
-	
-	ViewTransitionModel model;
-	
+    
+    ViewTransitionModel model;
+    
     private SimpleStringProperty statusTextProperty = new SimpleStringProperty("");
-	
-	@FXML
-	private TextArea statusBar;
-	
-	@FXML
-	private Label departmentNameLabel;
-	
-	public DepartmentController() {
-		
-	}
+    
+    @FXML
+    private TextArea statusBar;
+    
+    @FXML
+    private Label departmentNameLabel;
+    
+    public DepartmentController() {
+        
+    }
 
-	public void setModel(ViewTransitionModel model) {
-		// TODO Auto-generated method stub
-		this.model = model;
-	      
-		statusBar.editableProperty().set(false);
-		Bindings.bindBidirectional(statusBar.textProperty(), statusTextProperty);
-	}
-	
-	@FXML
+    public void setModel(ViewTransitionModel model) {
+        // TODO Auto-generated method stub
+        this.model = model;
+          
+        statusBar.editableProperty().set(false);
+        Bindings.bindBidirectional(statusBar.textProperty(), statusTextProperty);
+    }
+    
+    @FXML
     void addCourse(ActionEvent event) {
-    	model.showInitializeCourse();
+        model.showInitializeCourse();
     }
-	
-	@FXML
+    
+    @FXML
     void addConstraint(ActionEvent event) {
-    	model.showConstraintModification();
+        model.showConstraintModification();
     }
-	
-	@FXML
+    
+    @FXML
     void modifyCourse(ActionEvent event) {
-    	model.showCourseModification();
+        model.showCourseModification();
     }
-	
-	@FXML
+    
+    @FXML
     void validateSchedule(ActionEvent event) {
-    	setStatus("Schedule validated.");
+        setStatus("Schedule validated.");
     }
-	
-	@FXML
+    
+    @FXML
     void markAsComplete(ActionEvent event) {
-    	setStatus("Department schedule marked as complete.");
+        setStatus("Department schedule marked as complete.");
     }
 
-	public void setStatus(String status) {
-		statusTextProperty.set(status + "\n" + statusTextProperty.get());
-	}
+    public void setStatus(String status) {
+        statusTextProperty.set(status + "\n" + statusTextProperty.get());
+    }
 }

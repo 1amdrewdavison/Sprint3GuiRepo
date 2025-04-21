@@ -7,23 +7,23 @@ import javafx.scene.control.Button;
 
 
 public class ConstraintController {
-	
-	ViewTransitionModel model;
-	
-	public ConstraintController() {
-		
-	}
+    
+    ViewTransitionModel model;
+    
+    public ConstraintController() {
+        
+    }
 
-	public void setModel(ViewTransitionModel model) {
-		// TODO Auto-generated method stub
-		this.model = model;
-	}
-	
-	@FXML
+    public void setModel(ViewTransitionModel model) {
+        // TODO Auto-generated method stub
+        this.model = model;
+    }
+    
+    @FXML
     private Button submitChangesButton;
 
     @FXML
     void submitChanges(ActionEvent event) {
-    	model.showDepartment("Changes submitted");
+        model.showDepartment("Changes submitted");
     }
 }
