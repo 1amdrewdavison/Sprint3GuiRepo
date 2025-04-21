@@ -69,7 +69,6 @@ public class ModifyCourseController {
 	}
 
 	public void setModel(ViewTransitionModel viewTransitionModel) {
-		// TODO Auto-generated method stub
 		this.model = viewTransitionModel;
 				
 		Bindings.bindBidirectional(courseNumber.textProperty(), courseNumberData);

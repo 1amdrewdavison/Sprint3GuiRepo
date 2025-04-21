@@ -8,6 +8,7 @@ import javafx.scene.text.TextFlow;
 
 public class SchedulerModel {
 	ObservableList<Course> courses = FXCollections.observableArrayList();
+    
     private String currentUserId;
     private int currentUserAccessLevel; // 0=Student, 1=Department Chair, 2=Registrar
     private String currentUserDepartment;
@@ -22,6 +23,8 @@ public class SchedulerModel {
 	}
 	
 	public void setCurrentUser(String userId, int accessLevel, String department) {
+    
+    public void setCurrentUser(String userId, int accessLevel, String department) {
         this.currentUserId = userId;
         this.currentUserAccessLevel = accessLevel;
         this.currentUserDepartment = department;
@@ -55,6 +58,7 @@ public class SchedulerModel {
     public String getSelectedTerm() {
     	return selectedTerm;
     }
+
 	
 	public ObservableList<Course> getCourses() {
 		return courses;
@@ -69,4 +73,6 @@ public class SchedulerModel {
 		return returnConstraints;
 	}
 	
+}
+
 }

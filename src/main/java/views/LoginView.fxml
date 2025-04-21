@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.LoginController">
+    <children>
+        <VBox alignment="CENTER" maxWidth="450.0" spacing="25.0">
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            
+            <Label text="Login" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="28.0" />
+                </font>
+            </Label>
+            
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" maxWidth="120.0" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+                </columnConstraints>
+                
+                <rowConstraints>
+                    <RowConstraints minHeight="40.0" prefHeight="50.0" />
+                    <RowConstraints minHeight="40.0" prefHeight="50.0" />
+                </rowConstraints>
+                
+                <Label text="ID:" style="-fx-font-size: 16px;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="idField" promptText="Enter your ID" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                
+                <Label text="Password:" style="-fx-font-size: 16px;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <PasswordField fx:id="passwordField" promptText="Enter your password" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </GridPane>
+            
+            <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitButtonAction" prefWidth="120.0" prefHeight="40.0" style="-fx-font-size: 16px;">
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </Button>
+        </VBox>
+    </children>
+</StackPane>

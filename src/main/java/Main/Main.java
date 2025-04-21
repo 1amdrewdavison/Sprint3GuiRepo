@@ -7,13 +7,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import views.DepartmentController;
 import views.MainController;
-
 
 public class Main extends Application
 {
-
   @Override
   public void start(Stage stage) throws Exception {
     SchedulerModel model = new SchedulerModel();
@@ -23,19 +20,19 @@ public class Main extends Application
     BorderPane view = loader.load();
     MainController cont = loader.getController();
     ViewTransitionModel vm = new ViewTransitionModel(view, model);
+    
     cont.setModel(vm);
 
+    // Start with the login screen
     vm.showLogin();
     
     Scene s = new Scene(view);
     stage.setScene(s);
     stage.show();
-   }
+  }
 
-  
   public static void main(String [] args)
   {
     launch(args);
   }
-
 }

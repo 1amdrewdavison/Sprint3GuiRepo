@@ -17,9 +17,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
 public class DepartmentController {
-	
-	ViewTransitionModel model;
-	
+    
+    ViewTransitionModel model;
+    
     private SimpleStringProperty statusTextProperty = new SimpleStringProperty("");
 	
     @FXML
@@ -77,39 +77,41 @@ public class DepartmentController {
 		statusBar.editableProperty().set(false);
 		Bindings.bindBidirectional(statusBar.textProperty(), statusTextProperty);
 	}
-	
-	@FXML
+	    
+    
+    @FXML
     void addCourse(ActionEvent event) {
-    	model.showInitializeCourse();
+        model.showInitializeCourse();
     }
-	
-	@FXML
+    
+    @FXML
     void addConstraint(ActionEvent event) {
-    	model.showConstraintModification();
+        model.showConstraintModification();
     }
-	
-	@FXML
+    
+    @FXML
     void modifyCourse(ActionEvent event) {
-    	model.showCourseModification();
+        model.showCourseModification();
     }
-	
-	@FXML
+    
+    @FXML
     void validateSchedule(ActionEvent event) {
-    	setStatus("Schedule validated.");
+        setStatus("Schedule validated.");
     }
-	
-	@FXML
+    
+    @FXML
     void markAsComplete(ActionEvent event) {
-    	setStatus("Department schedule marked as complete.");
+        setStatus("Department schedule marked as complete.");
     }
 
-	public void setStatus(String status) {
-		statusTextProperty.set(status + "\n" + statusTextProperty.get());
-	}
 	
 	@FXML
     void editCourseSelection(ActionEvent event) {
         ObservableList<Integer> selectedItems = courseListDisplay.getSelectionModel().getSelectedIndices();
         model.showCourseModification(courseListReal.get(selectedItems.get(0)));
+	}
+
+    public void setStatus(String status) {
+        statusTextProperty.set(status + "\n" + statusTextProperty.get());
     }
 }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.HomeController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    
+    <top>
+        <BorderPane>
+            <left>
+                <Label text="Homepage" style="-fx-font-weight: bold;">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            </left>
+        </BorderPane>
+    </top>
+    
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <padding>
+                <Insets top="40.0" />
+            </padding>
+            
+            <!-- Student Level Access - Available to all users -->
+            <HBox spacing="15" alignment="CENTER">
+                <Button fx:id="viewCurrentTermButton" text="View Current Term" 
+                        onAction="#handleViewCurrentTermAction" prefWidth="200" />
+                <Button fx:id="viewCatalogButton" text="View Catalog" 
+                        onAction="#handleViewCatalogAction" prefWidth="200" />
+            </HBox>
+            
+            <!-- Department Chair Level Access -->
+			<VBox fx:id="departmentChairControls" spacing="15" alignment="CENTER" visible="false">
+    			<Label text="Department Chair Options" style="-fx-font-weight: bold;" />
+    			<HBox spacing="15" alignment="CENTER">
+        			<HBox spacing="5" alignment="CENTER_LEFT">
+            			<Button fx:id="viewDepartmentButton" text="View Current Department" 
+                    			onAction="#handleViewDepartmentAction" prefWidth="200" />
+            			<ComboBox fx:id="departmentComboBox" prefWidth="150" visible="false" />
+        			</HBox>
+        			<HBox spacing="5" alignment="CENTER_LEFT">
+            			<Button fx:id="proposeNewDepartmentButton" text="Propose New Department" 
+                    			onAction="#handleProposeNewDepartmentAction" prefWidth="200" />
+            			<ComboBox fx:id="newDepartmentComboBox" prefWidth="150" visible="false" />
+        			</HBox>
+    			</HBox>
+        			<HBox spacing="5" alignment="CENTER">
+        			<Button fx:id="addDepartmentButton" text="Add Department from Catalog" 
+                			onAction="#handleAddDepartmentAction" prefWidth="250" />
+    			</HBox>
+			</VBox>
+            
+            <!-- Registrar Level Access -->
+            <VBox fx:id="registrarControls" spacing="15" alignment="CENTER" visible="false">
+                <Label text="Registrar Options" style="-fx-font-weight: bold;" />
+                <Button fx:id="startTermButton" text="Start Term" 
+                        onAction="#handleStartTermAction" prefWidth="200" />
+            </VBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <HBox alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <Label fx:id="statusLabel" text="Welcome to the system. You are logged in as: Student" />
+        </HBox>
+    </bottom>
+</BorderPane>
