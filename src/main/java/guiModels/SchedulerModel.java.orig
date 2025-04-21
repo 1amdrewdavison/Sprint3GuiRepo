@@ -7,12 +7,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
 public class SchedulerModel {
+<<<<<<< HEAD
 	ObservableList<Course> courses = FXCollections.observableArrayList();
-    private String currentUserId;
-    private int currentUserAccessLevel; // 0=Student, 1=Department Chair, 2=Registrar
-    private String currentUserDepartment;
-    private String selectedDepartment;
-    private String selectedTerm;
 	
 	public SchedulerModel() {
 		Course mockCourse = new Course("Intro to CS", "a", "101", "William, Bailey", "Olin 101", "MWF 8-9");
@@ -21,7 +17,33 @@ public class SchedulerModel {
 		courses.add(mockCourse2);
 	}
 	
-	public void setCurrentUser(String userId, int accessLevel, String department) {
+	
+	
+	public ObservableList<Course> getCourses() {
+		return courses;
+	}
+	
+	public ObservableList<String> getConstraints() {
+		ObservableList<String> returnConstraints = FXCollections.observableArrayList();
+		returnConstraints.add("Constraint One");
+		returnConstraints.add("Constraint Two");
+		returnConstraints.add("Constraint Three");
+		returnConstraints.add("Constraint Four");
+		return returnConstraints;
+	}
+	
+}
+=======
+    
+    private String currentUserId;
+    private int currentUserAccessLevel; // 0=Student, 1=Department Chair, 2=Registrar
+    private String currentUserDepartment;
+    private String selectedDepartment;
+    private String selectedTerm;
+    
+    public SchedulerModel() {}
+    
+    public void setCurrentUser(String userId, int accessLevel, String department) {
         this.currentUserId = userId;
         this.currentUserAccessLevel = accessLevel;
         this.currentUserDepartment = department;
@@ -55,18 +77,5 @@ public class SchedulerModel {
     public String getSelectedTerm() {
     	return selectedTerm;
     }
-	
-	public ObservableList<Course> getCourses() {
-		return courses;
-	}
-	
-	public ObservableList<String> getConstraints() {
-		ObservableList<String> returnConstraints = FXCollections.observableArrayList();
-		returnConstraints.add("Constraint One");
-		returnConstraints.add("Constraint Two");
-		returnConstraints.add("Constraint Three");
-		returnConstraints.add("Constraint Four");
-		return returnConstraints;
-	}
-	
 }
+>>>>>>> 0f3c0dd7dc8820f5541ce80b8fae84ebb30a569c

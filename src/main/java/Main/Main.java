@@ -17,17 +17,15 @@ public class Main extends Application
   @Override
   public void start(Stage stage) throws Exception {
     SchedulerModel model = new SchedulerModel();
-    
-    //Add dummy data here
-    
+        
     FXMLLoader loader = new FXMLLoader();
     loader.setLocation(Main.class.getResource("../views/MainView.fxml"));
     BorderPane view = loader.load();
     MainController cont = loader.getController();
     ViewTransitionModel vm = new ViewTransitionModel(view, model);
     cont.setModel(vm);
-    vm.showDepartment();
-//    vm.showLogin();
+
+    vm.showLogin();
     
     Scene s = new Scene(view);
     stage.setScene(s);

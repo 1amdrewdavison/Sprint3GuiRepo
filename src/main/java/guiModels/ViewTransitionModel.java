@@ -8,6 +8,7 @@ import javafx.scene.layout.Pane;
 import views.ConstraintController;
 import views.CreateCourseController;
 import views.DepartmentController;
+import views.MainController;
 import views.ModifyCourseController;
 
 public class ViewTransitionModel {
@@ -15,13 +16,23 @@ public class ViewTransitionModel {
 	BorderPane mainview;
 	public SchedulerModel schedulerModel;
 	BorderPane departmentView;
+    private MainController mainController;
 	
 	public ViewTransitionModel(BorderPane mainview, SchedulerModel model) {
 		this.mainview = mainview;
 		this.schedulerModel = model;
 	}
 	
+	public void setMainController(MainController controller) {
+        this.mainController = controller;
+    }
+	
 	public void showDepartment() {
+		// Show the top navigation when showing department
+        if (mainController != null) {
+            mainController.showNavigationElements(true);
+        }
+        
 		FXMLLoader loader = new FXMLLoader();
 	    loader.setLocation(ViewTransitionModel.class
 	        .getResource("../views/DepartmentView.fxml"));
@@ -38,6 +49,11 @@ public class ViewTransitionModel {
 	}
 	    
     public void showDepartment(String departmentStatusUpdate) {
+    	// Show the top navigation when showing department
+        if (mainController != null) {
+            mainController.showNavigationElements(true);
+        }
+    	
 		FXMLLoader loader = new FXMLLoader();
 	    loader.setLocation(ViewTransitionModel.class
 	        .getResource("../views/DepartmentView.fxml"));
@@ -115,11 +131,107 @@ public class ViewTransitionModel {
 	    }
 	}
 	
-	public void showLogin() {
-		
-	}
-	
-	public void showHome() {
-		
-	}
+	 public void showLogin() {
+	        // Hide the top navigation when showing login
+	        if (mainController != null) {
+	            mainController.showNavigationElements(false);
+	        }
+	        
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewTransitionModel.class
+	            .getResource("../views/LoginView.fxml"));
+	        try {
+	          Pane view = loader.load();
+	          mainview.setCenter(view);
+	          LoginController cont = loader.getController();
+	          cont.setModels(this, model);
+	        } catch (IOException e) {
+	          e.printStackTrace();
+	        }
+	    }
+	    
+	    public void showHome() {
+	        // Show the top navigation when showing home
+	        if (mainController != null) {
+	            mainController.showNavigationElements(true);
+	            mainController.setUserIdDisplay(model.getCurrentUserId());
+	        }
+	        
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewTransitionModel.class
+	            .getResource("../views/HomeView.fxml"));
+	        try {
+	            BorderPane view = loader.load();
+	            mainview.setCenter(view);
+	            HomeController cont = loader.getController();
+	            cont.setModels(this, model);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    
+	    public void showViewCurrentTerm() {
+	        showCurrentTerm();
+	    }
+
+	    public void showCatalog() {
+	        // Show the top navigation
+	        if (mainController != null) {
+	            mainController.showNavigationElements(true);
+	        }
+	        
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewTransitionModel.class
+	            .getResource("../views/CatalogView.fxml"));
+	        try {
+	            BorderPane view = loader.load();
+	            mainview.setCenter(view);
+	            CatalogController cont = loader.getController();
+	            cont.setModels(this, model);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    
+	    public void showViewCatalog() {
+	        showCatalog();
+	    }
+	    
+	    public void showCurrentTerm() {
+	        // Show the top navigation
+	        if (mainController != null) {
+	            mainController.showNavigationElements(true);
+	        }
+	        
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewTransitionModel.class
+	            .getResource("../views/CurrentTermView.fxml"));
+	        try {
+	            BorderPane view = loader.load();
+	            mainview.setCenter(view);
+	            CurrentTermController cont = loader.getController();
+	            cont.setModels(this, model);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    
+	    public void showAddDepartment() {
+	        // Show the top navigation
+	        if (mainController != null) {
+	            mainController.showNavigationElements(true);
+	        }
+	        
+	        FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewTransitionModel.class
+	            .getResource("../views/AddDepartmentView.fxml"));
+	        try {
+	            BorderPane view = loader.load();
+	            mainview.setCenter(view);
+	            AddDepartmentController cont = loader.getController();
+	            cont.setModels(this, model);
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	    }
 }
