@@ -21,9 +21,7 @@ public class SchedulerModel {
 		courses.add(mockCourse);
 		courses.add(mockCourse2);
 	}
-	
-	public void setCurrentUser(String userId, int accessLevel, String department) {
-    
+	    
     public void setCurrentUser(String userId, int accessLevel, String department) {
         this.currentUserId = userId;
         this.currentUserAccessLevel = accessLevel;
@@ -73,6 +71,4 @@ public class SchedulerModel {
 		return returnConstraints;
 	}
 	
-}
-
 }

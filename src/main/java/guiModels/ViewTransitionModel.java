@@ -150,7 +150,7 @@ public class ViewTransitionModel {
           Pane view = loader.load();
           mainview.setCenter(view);
           LoginController cont = loader.getController();
-          cont.setModels(this, model);
+          cont.setModels(this, schedulerModel);
         } catch (IOException e) {
           e.printStackTrace();
         }
@@ -160,7 +160,7 @@ public class ViewTransitionModel {
         // Show the top navigation when showing home
         if (mainController != null) {
             mainController.showNavigationElements(true);
-            mainController.setUserIdDisplay(model.getCurrentUserId());
+            mainController.setUserIdDisplay(schedulerModel.getCurrentUserId());
         }
         
         FXMLLoader loader = new FXMLLoader();
@@ -170,7 +170,7 @@ public class ViewTransitionModel {
             BorderPane view = loader.load();
             mainview.setCenter(view);
             HomeController cont = loader.getController();
-            cont.setModels(this, model);
+            cont.setModels(this, schedulerModel);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -193,7 +193,7 @@ public class ViewTransitionModel {
             BorderPane view = loader.load();
             mainview.setCenter(view);
             CatalogController cont = loader.getController();
-            cont.setModels(this, model);
+            cont.setModels(this, schedulerModel);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -216,7 +216,7 @@ public class ViewTransitionModel {
             BorderPane view = loader.load();
             mainview.setCenter(view);
             CurrentTermController cont = loader.getController();
-            cont.setModels(this, model);
+            cont.setModels(this, schedulerModel);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -235,7 +235,7 @@ public class ViewTransitionModel {
             BorderPane view = loader.load();
             mainview.setCenter(view);
             AddDepartmentController cont = loader.getController();
-            cont.setModels(this, model);
+            cont.setModels(this, schedulerModel);
         } catch (IOException e) {
             e.printStackTrace();
         }
