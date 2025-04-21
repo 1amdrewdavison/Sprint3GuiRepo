@@ -13,6 +13,7 @@ public class ViewTransitionModel {
 
 	BorderPane mainview;
 	SchedulerModel model;
+	BorderPane departmentView;
 	
 	public ViewTransitionModel(BorderPane mainview, SchedulerModel model) {
 		this.mainview = mainview;
@@ -24,8 +25,9 @@ public class ViewTransitionModel {
 	    loader.setLocation(ViewTransitionModel.class
 	        .getResource("../views/DepartmentView.fxml"));
 	    try {
-	      Pane view = loader.load();
+	      BorderPane view = loader.load();
 	      mainview.setCenter(view);
+	      departmentView = view;
 	      DepartmentController cont = loader.getController();
 	      cont.setModel(model);
 	    } catch (IOException e) {
@@ -40,7 +42,7 @@ public class ViewTransitionModel {
 	        .getResource("../views/CourseModificationView.fxml"));
 	    try {
 	      Pane view = loader.load();
-	      mainview.setCenter(view);
+	      departmentView.setCenter(view);
 	      CourseController cont = loader.getController();
 	      cont.setModel(model);
 	    } catch (IOException e) {
@@ -55,7 +57,7 @@ public class ViewTransitionModel {
 	        .getResource("../views/ConstraintModificationView.fxml"));
 	    try {
 	      Pane view = loader.load();
-	      mainview.setCenter(view);
+	      departmentView.setCenter(view);
 	      ConstraintController cont = loader.getController();
 	      cont.setModel(model);
 	    } catch (IOException e) {
@@ -70,12 +72,20 @@ public class ViewTransitionModel {
 	        .getResource("../views/CourseModificationView.fxml"));
 	    try {
 	      Pane view = loader.load();
-	      mainview.setCenter(view);
+	      departmentView.setCenter(view);
 	      CourseController cont = loader.getController();
 	      cont.setModel(model);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
+	}
+	
+	public void showLogin() {
+		
+	}
+	
+	public void showHome() {
+		
 	}
 }

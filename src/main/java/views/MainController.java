@@ -36,6 +36,6 @@ public class MainController {
 
     @FXML
     void navigateHome(ActionEvent event) {
-
+    	model.showHome();
     }
 }
