@@ -22,7 +22,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="40.0" prefWidth="350.0">
+            <TextField fx:id="courseTitle" prefHeight="40.0" prefWidth="350.0">
                <HBox.margin>
                   <Insets left="50.0" top="10.0" />
                </HBox.margin>
@@ -42,7 +42,7 @@
                   <Insets left="25.0" top="5.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="37.0" prefWidth="150.0">
+            <TextField fx:id="courseNumber" prefHeight="37.0" prefWidth="150.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -58,7 +58,7 @@
                   <Insets top="5.0" />
                </HBox.margin>
             </Label>
-            <TextField prefHeight="37.0" prefWidth="150.0">
+            <TextField fx:id="courseSection" prefHeight="37.0" prefWidth="150.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -78,7 +78,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="RoomSelection">
+            <MenuButton fx:id="roomDropdown" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="RoomSelection">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -90,7 +90,7 @@
                   <Insets left="25.0" top="10.0" />
                </HBox.margin>
             </MenuButton>
-            <TextField prefHeight="40.0" prefWidth="175.0">
+            <TextField fx:id="roomRawEntry" prefHeight="40.0" prefWidth="175.0">
                <HBox.margin>
                   <Insets top="10.0" />
                </HBox.margin>
@@ -110,7 +110,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="TimeSelection">
+            <MenuButton fx:id="tiemDropdown" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="TimeSelection">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -122,7 +122,7 @@
                   <Insets left="25.0" top="10.0" />
                </HBox.margin>
             </MenuButton>
-            <TextField prefHeight="40.0" prefWidth="175.0">
+            <TextField fx:id="timeRawEntry" prefHeight="40.0" prefWidth="175.0">
                <HBox.margin>
                   <Insets top="10.0" />
                </HBox.margin>
@@ -142,7 +142,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="InstructorSelection">
+            <MenuButton fx:id="instructorDropdown" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="InstructorSelection">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -154,7 +154,7 @@
                   <Insets left="25.0" top="10.0" />
                </HBox.margin>
             </MenuButton>
-            <TextField prefHeight="40.0" prefWidth="175.0">
+            <TextField fx:id="instructorRawEntry" prefHeight="40.0" prefWidth="175.0">
                <HBox.margin>
                   <Insets top="10.0" />
                </HBox.margin>
@@ -174,7 +174,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="CourseSelection">
+            <MenuButton fx:id="crosslistedDropdown" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="CourseSelection">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -198,7 +198,7 @@
                   <Insets left="25.0" />
                </HBox.margin>
             </Label>
-            <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" text="Y/N">
+            <MenuButton fx:id="falseLimit" mnemonicParsing="false" prefHeight="40.0" prefWidth="175.0" text="Y/N">
                <items>
                   <MenuItem mnemonicParsing="false" text="Action 1" />
                   <MenuItem mnemonicParsing="false" text="Action 2" />

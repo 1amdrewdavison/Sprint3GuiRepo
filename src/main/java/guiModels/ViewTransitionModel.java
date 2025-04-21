@@ -13,12 +13,12 @@ import views.ModifyCourseController;
 public class ViewTransitionModel {
 
 	BorderPane mainview;
-	SchedulerModel model;
+	public SchedulerModel schedulerModel;
 	BorderPane departmentView;
 	
 	public ViewTransitionModel(BorderPane mainview, SchedulerModel model) {
 		this.mainview = mainview;
-		this.model = model;
+		this.schedulerModel = model;
 	}
 	
 	public void showDepartment() {
@@ -63,6 +63,22 @@ public class ViewTransitionModel {
 	      departmentView.setCenter(view);
 	      ModifyCourseController cont = loader.getController();
 	      cont.setModel(this);
+	    } catch (IOException e) {
+	      // TODO Auto-generated catch block
+	      e.printStackTrace();
+	    }
+	}
+	
+	public void showCourseModification(Course course) {
+		FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(ViewTransitionModel.class
+	        .getResource("../views/CourseModificationView.fxml"));
+	    try {
+	      Pane view = loader.load();
+	      departmentView.setCenter(view);
+	      ModifyCourseController cont = loader.getController();
+	      cont.setModel(this);
+	      cont.setCourse(course);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
