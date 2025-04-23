@@ -16,6 +16,7 @@ import views.HomeController;
 import views.LoginController;
 import views.MainController;
 import views.ModifyCourseController;
+import views.StartTermController;
 
 public class ViewTransitionModel {
 
@@ -34,7 +35,6 @@ public class ViewTransitionModel {
     }
 	
     public void showDepartment() {
-        // Show the top navigation when showing department
         if (mainController != null) {
             mainController.showNavigationElements(true);
         }
@@ -49,13 +49,11 @@ public class ViewTransitionModel {
 	      DepartmentController cont = loader.getController();
 	      cont.setModel(this);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
 	    
     public void showDepartment(String departmentStatusUpdate) {
-    	// Show the top navigation when showing department
         if (mainController != null) {
             mainController.showNavigationElements(true);
         }
@@ -71,7 +69,6 @@ public class ViewTransitionModel {
 	      cont.setModel(this);
 	      cont.setStatus(departmentStatusUpdate);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
@@ -86,7 +83,6 @@ public class ViewTransitionModel {
 	      ModifyCourseController cont = loader.getController();
 	      cont.setModel(this);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
@@ -102,7 +98,6 @@ public class ViewTransitionModel {
 	      cont.setModel(this);
 	      cont.setCourse(course);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
@@ -117,7 +112,6 @@ public class ViewTransitionModel {
 	      ConstraintController cont = loader.getController();
 	      cont.setModel(this);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
@@ -132,7 +126,6 @@ public class ViewTransitionModel {
 	      CreateCourseController cont = loader.getController();
 	      cont.setModel(this);
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
@@ -157,7 +150,6 @@ public class ViewTransitionModel {
     }
     
     public void showHome() {
-        // Show the top navigation when showing home
         if (mainController != null) {
             mainController.showNavigationElements(true);
             mainController.setUserIdDisplay(schedulerModel.getCurrentUserId());
@@ -181,7 +173,6 @@ public class ViewTransitionModel {
     }
 
     public void showCatalog() {
-        // Show the top navigation
         if (mainController != null) {
             mainController.showNavigationElements(true);
         }
@@ -204,7 +195,6 @@ public class ViewTransitionModel {
     }
     
     public void showCurrentTerm() {
-        // Show the top navigation
         if (mainController != null) {
             mainController.showNavigationElements(true);
         }
@@ -223,7 +213,6 @@ public class ViewTransitionModel {
     }
     
     public void showAddDepartment() {
-        // Show the top navigation
         if (mainController != null) {
             mainController.showNavigationElements(true);
         }
@@ -235,6 +224,24 @@ public class ViewTransitionModel {
             BorderPane view = loader.load();
             mainview.setCenter(view);
             AddDepartmentController cont = loader.getController();
+            cont.setModels(this, schedulerModel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void showStartTerm() {
+        if (mainController != null) {
+            mainController.showNavigationElements(true);
+        }
+        
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(ViewTransitionModel.class
+            .getResource("../views/StartTermView.fxml"));
+        try {
+            BorderPane view = loader.load();
+            mainview.setCenter(view);
+            StartTermController cont = loader.getController();
             cont.setModels(this, schedulerModel);
         } catch (IOException e) {
             e.printStackTrace();

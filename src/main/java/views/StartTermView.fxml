@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.StartTermController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    
+    <top>
+        <VBox spacing="10">
+            <Label text="Start New Term" style="-fx-font-weight: bold;">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+            <Separator />
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox spacing="25" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            
+            <!-- Term Information Section -->
+            <GridPane hgap="15" vgap="15" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="250.0" />
+                </columnConstraints>
+                
+                <rowConstraints>
+                    <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                    <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                    <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                </rowConstraints>
+                
+                <Label text="Academic Year:" style="-fx-font-size: 16px;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="yearComboBox" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                
+                <Label text="Term:" style="-fx-font-size: 16px;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <ComboBox fx:id="termComboBox" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                
+                <Label text="Start Date:" style="-fx-font-size: 16px;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <DatePicker fx:id="startDatePicker" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </GridPane>
+            
+            <!-- Department Settings Section -->
+            <TitledPane text="Department Settings" expanded="false">
+                <VBox spacing="15">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+                    </padding>
+                    
+                    <CheckBox fx:id="copyPreviousTermCheckBox" text="Copy departments from previous term" />
+                    
+                    <VBox fx:id="departmentSelectionPane" spacing="10" disable="true">
+                        <Label text="Select departments to include:" />
+                        <ScrollPane prefHeight="150.0">
+                            <VBox fx:id="departmentCheckboxContainer" spacing="5">
+                                <CheckBox text="Computer Science" selected="true" />
+                                <CheckBox text="Mathematics" selected="true" />
+                                <CheckBox text="Physics" selected="true" />
+                                <CheckBox text="Chemistry" selected="true" />
+                                <CheckBox text="Biology" selected="true" />
+                                <CheckBox text="English" selected="true" />
+                                <CheckBox text="History" selected="true" />
+                                <CheckBox text="Psychology" selected="true" />
+                                <CheckBox text="Sociology" selected="true" />
+                                <CheckBox text="Economics" selected="true" />
+                            </VBox>
+                        </ScrollPane>
+                    </VBox>
+                </VBox>
+            </TitledPane>
+            
+            <!-- Timeline Settings Section -->
+            <TitledPane text="Timeline Settings" expanded="false">
+                <GridPane hgap="15" vgap="15">
+                    <padding>
+                        <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
+                    </padding>
+                    
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" />
+                    </columnConstraints>
+                    
+                    <rowConstraints>
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                        <RowConstraints minHeight="40.0" prefHeight="40.0" />
+                    </rowConstraints>
+                    
+                    <Label text="Department Submission Deadline:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <DatePicker fx:id="deptDeadlinePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    
+                    <Label text="Registration Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <DatePicker fx:id="registrationStartPicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    
+                    <Label text="Drop/Add Deadline:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <DatePicker fx:id="dropAddDeadlinePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    
+                    <Label text="Term End Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                </GridPane>
+            </TitledPane>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+            <TextArea fx:id="statusTextArea" prefHeight="80.0" editable="false" wrapText="true" />
+            <HBox spacing="15" alignment="CENTER_RIGHT">
+                <Button fx:id="cancelButton" text="Cancel" onAction="#handleCancelAction" prefWidth="120" prefHeight="35" />
+                <Button fx:id="createTermButton" text="Create Term" onAction="#handleCreateTermAction" prefWidth="120" prefHeight="35" style="-fx-base: #b9e3ff;" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

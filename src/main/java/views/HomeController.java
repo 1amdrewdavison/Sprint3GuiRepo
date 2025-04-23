@@ -78,7 +78,6 @@ public class HomeController {
                 break;
         }
         
-        //if user is a department chair, set their department as the default
         if (accessLevel == 1) {
             departmentComboBox.setValue(department);
         }
@@ -112,13 +111,12 @@ public class HomeController {
                                    ? schedulerModel.getCurrentUserDepartment() 
                                    : newDepartmentComboBox.getValue();
         
-        viewModel.showDepartment(); // You might want to create a specific view for this
+        viewModel.showDepartment();
     }
     
     @FXML
     private void handleStartTermAction(ActionEvent event) {
-        showAlert(Alert.AlertType.INFORMATION, "Start Term", "Feature Not Implemented", 
-                 "The Start Term functionality is not yet implemented.");
+        viewModel.showStartTerm();
     }
     
     private void showAlert(Alert.AlertType alertType, String title, String header, String content) {
@@ -133,4 +131,6 @@ public class HomeController {
     private void handleAddDepartmentAction(ActionEvent event) {
         viewModel.showAddDepartment();
     }
+    
+    
 }
